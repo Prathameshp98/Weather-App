@@ -6,6 +6,7 @@ import styles from '../../CSS/Result/result.module.css'
 
 const Result = () => {
 
+    // eslint-disable-next-line no-unused-vars
     const[location, setLocation] = useState({
         latitude: null,
         longitude: null
