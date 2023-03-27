@@ -18,7 +18,8 @@
     gap: 0px
 }
 
-.search form input {
+.search form input[type="search"] {
+    background-color: #fff;
     z-index: 3;
     outline: 0;
     width: 90%;
@@ -52,6 +53,7 @@
     .search {
         height: 450px;
         background-size: 100% 450px;
+        box-shadow: rgba(50, 50, 93, 0.75) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.75) 0px 18px 36px -18px inset;
     }
 
     .search form {

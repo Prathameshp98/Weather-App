@@ -6,7 +6,7 @@ const Search = () => {
     return (
         <div className={`${styles.search}`}>
             <form>
-                <input id="search" type="search" placeholder="Search a location..." autofocus required />
+                <input id="search" type="search" placeholder="Search a location..." autoFocus required />
                 <button type="submit">GO</button>
             </form>
         </div>
