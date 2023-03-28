@@ -10,7 +10,23 @@ const getDataByCoordinates = async(key, latitude, longitude) => {
         }
     })
     .then(result => {
-        return result
+        return result.data
+    })
+    .catch(err => {
+        return err
+    })
+}
+
+const getDataByPlace = async(key, place) => {
+    return await axios({
+        method: "GET",
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${key}&units=metric`,
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+    .then(result => {
+        return result.data
     })
     .catch(err => {
         return err
@@ -19,7 +35,8 @@ const getDataByCoordinates = async(key, latitude, longitude) => {
 
 
 const weatherAPI = {
-    getDataByCoordinates
+    getDataByCoordinates,
+    getDataByPlace
 }
 
 export default weatherAPI
