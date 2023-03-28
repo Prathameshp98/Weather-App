@@ -3,15 +3,18 @@ import React, { useEffect, useState } from 'react'
 import weatherAPI from '../../Utils/API/weather'
 import CommonFunc from '../../Utils/Func/common'
 
+import Toast from '../../Utils/Toast/Toast'
+
 import styles from '../../CSS/Result/result.module.css'
 
 const Result = (props) => {
 
-    // eslint-disable-next-line no-unused-vars
-    const[location, setLocation] = useState({
-        latitude: null,
-        longitude: null
+    const[toastData, setToastData] = useState({
+        code: null,
+        message: null,
+        timeStamp: null
     })
+    // eslint-disable-next-line no-unused-vars
     const[currentTime, setCurrentTime] = useState(null)
     const[locationData, setLocationData] = useState({
         data: null,
@@ -24,10 +27,6 @@ const Result = (props) => {
         (async () => {
 
             navigator.geolocation.getCurrentPosition(async function(position) {
-                setLocation({
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.latitude
-                })
                 const result = await weatherAPI.getDataByCoordinates(process.env.REACT_APP_API_KEY, position.coords.latitude, position.coords.longitude)
                 if(result.cod === 200){
                     const air = await CommonFunc.airQualityFinder(result.visibility)
@@ -41,6 +40,11 @@ const Result = (props) => {
                     console.log(result.data)
                 } else {
                     console.log("Something went wrong")
+                    setToastData({
+                        code: result.data.cod,
+                        message: result.data.message,
+                        timeStamp: Math.random()
+                    })
                 }
                 
             });    
@@ -87,6 +91,7 @@ const Result = (props) => {
                     </div>
                 </div>
             } 
+            {toastData.code && <Toast toastData={toastData} />}
         </>    
     )
 }

@@ -13,7 +13,7 @@ const getDataByCoordinates = async(key, latitude, longitude) => {
         return result.data
     })
     .catch(err => {
-        return err
+        return err.response
     })
 }
 
@@ -29,7 +29,7 @@ const getDataByPlace = async(key, place) => {
         return result.data
     })
     .catch(err => {
-        return err
+        return err.response
     })
 }
 

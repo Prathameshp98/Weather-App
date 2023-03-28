@@ -3,10 +3,17 @@ import React, { useEffect, useState } from 'react'
 import weatherAPI from '../../Utils/API/weather'
 import CommonFunc from '../../Utils/Func/common'
 
+import Toast from '../../Utils/Toast/Toast'
+
 import styles from '../../CSS/Search Result/search-result.module.css'
 
 const SearchResult = (props) => {
 
+    const[toastData, setToastData] = useState({
+        code: null,
+        message: null,
+        timeStamp: null
+    })
     const[currentTime, setCurrentTime] = useState(null)
     const[locationSearchData, setlocationSearchData] = useState({
         data: null,
@@ -32,6 +39,11 @@ const SearchResult = (props) => {
                     console.log(result) 
                 } else {
                     console.log("Something went wrong")
+                    setToastData({
+                        code: result.data.cod,
+                        message: result.data.message,
+                        timeStamp: Math.random()
+                    })
                 }
                 
             } 
@@ -76,6 +88,7 @@ const SearchResult = (props) => {
                     </div>
                 </div>
             }
+            {toastData.code && <Toast toastData={toastData} />}
         </>
     )
 }
