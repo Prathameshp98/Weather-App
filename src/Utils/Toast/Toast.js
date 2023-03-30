@@ -26,7 +26,6 @@ const Toast = (props) => {
     useEffect(() => {
 
         if(data.timeStamp !== props.toastData.timeStamp){
-            console.log('Toast')
             const response = toaster(props.toastData.code)
 
             setData({

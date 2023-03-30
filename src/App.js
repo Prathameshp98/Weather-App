@@ -5,6 +5,7 @@ import Search from './Components/Search/Search';
 import SearchResult from './Components/Search Result/SearchResult';
 import Result from './Components/Result/Result';
 import Featured from './Components/Featured/Featured';
+import Footer from './Components/Footer/Footer';
 
 import styles from './CSS/app.module.css';
 
@@ -24,6 +25,7 @@ const App = () => {
             <SearchResult  searchPlace={searchPlace}/>
             <Result />
             <Featured />
+            <Footer />
         </div>
     );
 }

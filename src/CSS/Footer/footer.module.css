@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.footer {
+    width: 100%;
+    background-color: #fff;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+.footer .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .dropdown .each__dropdown {
+    width: 100%;
+}
+
+.footer .dropdown .each__dropdown .dropdown__head {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.footer .dropdown .each__dropdown .dropdown__head h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: #878787;
+}
+
+.footer .dropdown .each__dropdown .dropdown__head img {
+    padding: 5px;
+    height: 14px;
+    width: 14px;
+}
+
+.footer .dropdown .each__dropdown .dropdown__options {
+    width: 94%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .dropdown .each__dropdown .dropdown__options p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.footer .social {
+    width: 94%;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-self: start;
+    gap: 20px
+}
+
+.footer .copyright {
+    width: 94%;
+    padding: 10px;
+    text-align: left;
+}
+
+.footer .copyright p {
+    color: #878787;
+    font-size: 11px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.footer .copyright h6 {
+    color: #878787;
+    margin-bottom: 20px;
+}

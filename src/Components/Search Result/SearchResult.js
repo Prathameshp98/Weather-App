@@ -36,7 +36,6 @@ const SearchResult = (props) => {
                         icon: "https://openweathermap.org/img/wn/" + result.weather[0].icon + "@2x.png",
                         quality: air
                     })
-                    console.log(result) 
                 } else {
                     console.log("Something went wrong")
                     setToastData({
