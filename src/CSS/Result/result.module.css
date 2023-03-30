@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .result {
     display: flex;
@@ -69,9 +69,29 @@
     .result .result__inner {
         width: 58%;
         height: fit-content;
-        padding: 20px;
+        padding: 30px;
         margin: 40px 0;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .result .result__inner h3 {
+        margin: 10px 15% 0;
+    }
+    
+    .result .result__inner p {
+        margin: 0px 15% 10px;
+    }
+    
+    .result .result__inner__top .temperature {
+        width: 70%;
+        margin: 0 15%;
+        
+    }
+
+    .result .result__inner__bottom {
+        width: 70%;
+        margin: 20px 15% 0;
+
     }
     
 }

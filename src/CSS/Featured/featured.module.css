@@ -15,16 +15,21 @@
 .featured .container__group {
     display: flex;
     flex-direction: column;
+}
+
+.featured .container__group .container__group__inner {
+    display: flex;
+    flex-direction: column;
     gap: 0px;
 }
 
-.featured .container__group h3 {
+.featured .container__group  h3 {
     margin: 30px 0 10px;
     font-size: 27px;
     font-weight: 500;
 }
 
-.featured .container__group .container {   
+.featured .container__group .container__group__inner .container {   
     background-color: #fff;
     width: 100%;
     height: fit-content;
@@ -33,62 +38,88 @@
     margin-bottom: 20px;
 }
 
-.featured .container__group .container .information {
+.featured .container__group .container__group__inner .container .information {
     padding: 0px 15px 15px;
 }
 
-.featured .container__group .container .information .city__name {
+.featured .container__group .container__group__inner .container .information .city__name {
     font-size: 21px;
     font-weight: 500;
     text-decoration: underline;
 }
 
-.featured .container__group .container .place__img {
+.featured .container__group .container__group__inner .container .place__img {
     height: 200px;
     width: 100%;
 }
 
-.featured .container__group .container .result__inner__top .temperature {
+.featured .container__group .container__group__inner .container .result__inner__top .temperature {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     gap: 0px;
 }
 
-.featured .container__group .container .result__inner__top .temperature h2 {
+.featured .container__group .container__group__inner .container .result__inner__top .temperature h2 {
     margin: 10px 0 0;
 }
-.featured .container__group .container .result__inner__top .temperature span {
+.featured .container__group .container__group__inner .container .result__inner__top .temperature span {
     font-weight: 600;
 }
 
-.featured .container__group .container .result__inner__bottom {
+.featured .container__group .container__group__inner .container .result__inner__bottom {
     margin: 20px 0 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.featured .container__group .container .result__inner__bottom hr {
+.featured .container__group .container__group__inner .container .result__inner__bottom hr {
     width: 95%;
     margin: 0 2.5%;
 }
 
-.featured .container__group .container .result__inner__bottom .air {
+.featured .container__group .container__group__inner .container .result__inner__bottom .air {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
 }
 
-.featured .container__group .container .result__inner__bottom .air p,h6 {
+.featured .container__group .container__group__inner .container .result__inner__bottom .air p,h6 {
     margin: 0;
 }
 
-.featured .container__group .container .result__inner__bottom .air h6 {
+.featured .container__group .container__group__inner .container .result__inner__bottom .air h6 {
     font-size: 15px;
     font-weight: 600;
 }
-.featured .container__group .container .result__inner__bottom .air p {
+.featured .container__group .container__group__inner .container .result__inner__bottom .air p {
     margin: 0;
+}
+
+
+@media (min-width: 768px) {
+
+    .featured .container__group  h3 {
+        margin: 50px 0 10px;
+        font-size: 27px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .featured .container__group .container__group__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 10%;
+        gap: 20px;
+    }
+
+    .featured .container__group .container__group__inner .container {   
+        width: 350px;
+        height: fit-content;
+        margin-bottom: 20px;
+    }
 }

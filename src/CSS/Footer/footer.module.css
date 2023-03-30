@@ -77,3 +77,35 @@
     color: #878787;
     margin-bottom: 20px;
 }
+
+@media (min-width: 768px) {
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer .dropdown {
+        margin-top: 30px;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .footer .social {
+        width: 58%;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-self: start;
+        gap: 20px
+    }
+    
+    .footer .copyright {
+        width: 30%;
+        padding: 10px;
+        text-align: center;
+    }
+
+}

@@ -57,87 +57,93 @@ const Featured = () => {
             {nationalLocationData.length &&
                 <div className={`${styles.container__group}`}>
                     <h3>National</h3>
-                    {nationalLocationData.map((eachData, index) => {
-                        return (
-                            <div key={Math.random()} className={`${styles.container}`}>
-                                <img className={`${styles.place__img}`} src={eachData.image} alt="place" />
+                    <div className={`${styles.container__group__inner}`}>
+                        {nationalLocationData.map((eachData, index) => {
+                            return (
+                                <div key={Math.random()} className={`${styles.container}`}>
+                                    <img className={`${styles.place__img}`} src={eachData.image} alt="place" />
 
-                                <div className={`${styles.information}`}>
-                                    <p className={`${styles.city__name}`}>{eachData.data.name}</p>
-                                    <div className={`${styles.result__inner__top}`}>
-                                        <div className={`${styles.temperature}`}>
-                                            <img src={eachData.icon} alt="icon" />
-                                            <div className={`${styles.temperature__inner}`}>
-                                                <h2><span>{eachData.data.main.temp}</span> &#8451;</h2>
-                                                <p>RealFeel <span>{eachData.data.main.feels_like}</span> &#8451;</p>
+                                    <div className={`${styles.information}`}>
+                                        <p className={`${styles.city__name}`}>{eachData.data.name}</p>
+                                        <div className={`${styles.result__inner__top}`}>
+                                            <div className={`${styles.temperature}`}>
+                                                <img src={eachData.icon} alt="icon" />
+                                                <div className={`${styles.temperature__inner}`}>
+                                                    <h2><span>{eachData.data.main.temp}</span> &#8451;</h2>
+                                                    <p>RealFeel <span>{eachData.data.main.feels_like}</span> &#8451;</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> 
-
-                                    <div className={`${styles.result__inner__bottom}`}>
-                                        <div className={`${styles.air}`}>
-                                            <p>Air Quality</p> 
-                                            <h6>{eachData.quality}</h6>
-                                        </div>
-                                        <hr />
-                                        <div className={`${styles.air}`}>
-                                            <p>Wind</p>
-                                            <h6>{eachData.data.wind.speed} m/s</h6>
-                                        </div>
-                                        <hr />
-                                        <div className={`${styles.air}`}>
-                                            <p>Precipitation</p>
-                                            <h6>{eachData.data.main.humidity} %</h6> 
                                         </div> 
-                                    </div>
-                                </div>   
 
-                            </div>
-                        )
-                    })}
+                                        <div className={`${styles.result__inner__bottom}`}>
+                                            <div className={`${styles.air}`}>
+                                                <p>Air Quality</p> 
+                                                <h6>{eachData.quality}</h6>
+                                            </div>
+                                            <hr />
+                                            <div className={`${styles.air}`}>
+                                                <p>Wind</p>
+                                                <h6>{eachData.data.wind.speed} m/s</h6>
+                                            </div>
+                                            <hr />
+                                            <div className={`${styles.air}`}>
+                                                <p>Precipitation</p>
+                                                <h6>{eachData.data.main.humidity} %</h6> 
+                                            </div> 
+                                        </div>
+                                    </div>   
+
+                                </div>
+                            )
+                        })}
+                    </div>
+                    
                 </div>
             }
             {internationalLocationData.length &&
                 <div className={`${styles.container__group}`}>
                     <h3>International</h3>
-                    {internationalLocationData.map((eachData, index) => {
-                        return (
-                            <div key={Math.random()} className={`${styles.container}`}>
-                                <img className={`${styles.place__img}`} src={eachData.image} alt="place" />
+                    <div className={`${styles.container__group__inner}`}>
+                        {internationalLocationData.map((eachData, index) => {
+                            return (
+                                <div key={Math.random()} className={`${styles.container}`}>
+                                    <img className={`${styles.place__img}`} src={eachData.image} alt="place" />
 
-                                <div className={`${styles.information}`}>
-                                    <p className={`${styles.city__name}`}>{eachData.data.name}</p>
-                                    <div className={`${styles.result__inner__top}`}>
-                                        <div className={`${styles.temperature}`}>
-                                            <img src={eachData.icon} alt="icon" />
-                                            <div className={`${styles.temperature__inner}`}>
-                                                <h2><span>{eachData.data.main.temp}</span> &#8451;</h2>
-                                                <p>RealFeel <span>{eachData.data.main.feels_like}</span> &#8451;</p>
+                                    <div className={`${styles.information}`}>
+                                        <p className={`${styles.city__name}`}>{eachData.data.name}</p>
+                                        <div className={`${styles.result__inner__top}`}>
+                                            <div className={`${styles.temperature}`}>
+                                                <img src={eachData.icon} alt="icon" />
+                                                <div className={`${styles.temperature__inner}`}>
+                                                    <h2><span>{eachData.data.main.temp}</span> &#8451;</h2>
+                                                    <p>RealFeel <span>{eachData.data.main.feels_like}</span> &#8451;</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> 
-
-                                    <div className={`${styles.result__inner__bottom}`}>
-                                        <div className={`${styles.air}`}>
-                                            <p>Air Quality</p> 
-                                            <h6>{eachData.quality}</h6>
-                                        </div>
-                                        <hr />
-                                        <div className={`${styles.air}`}>
-                                            <p>Wind</p>
-                                            <h6>{eachData.data.wind.speed} m/s</h6>
-                                        </div>
-                                        <hr />
-                                        <div className={`${styles.air}`}>
-                                            <p>Precipitation</p>
-                                            <h6>{eachData.data.main.humidity} %</h6> 
                                         </div> 
-                                    </div>
-                                </div>   
 
-                            </div>
-                        )
-                    })}
+                                        <div className={`${styles.result__inner__bottom}`}>
+                                            <div className={`${styles.air}`}>
+                                                <p>Air Quality</p> 
+                                                <h6>{eachData.quality}</h6>
+                                            </div>
+                                            <hr />
+                                            <div className={`${styles.air}`}>
+                                                <p>Wind</p>
+                                                <h6>{eachData.data.wind.speed} m/s</h6>
+                                            </div>
+                                            <hr />
+                                            <div className={`${styles.air}`}>
+                                                <p>Precipitation</p>
+                                                <h6>{eachData.data.main.humidity} %</h6> 
+                                            </div> 
+                                        </div>
+                                    </div>   
+
+                                </div>
+                            )
+                        })}
+                    </div>
+                    
                 </div>
             }   
         </div>
