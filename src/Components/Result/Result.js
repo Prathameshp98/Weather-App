@@ -49,7 +49,7 @@ const Result = (props) => {
             });  
 
             const errorHandler = () => {
-                console.log("Something went wrong")
+                alert("Something went wrong")
             }
             
             navigator.geolocation.getCurrentPosition(getLocation, errorHandler, {maximumAge:60000, timeout:5000, enableHighAccuracy:true})
