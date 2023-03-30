@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import Search from './Components/Search/Search';
 import SearchResult from './Components/Search Result/SearchResult';
 import Result from './Components/Result/Result';
+import Featured from './Components/Featured/Featured';
 
 import styles from './CSS/app.module.css';
 
@@ -22,6 +23,7 @@ const App = () => {
             <Search handlePlace={handlePlace} />
             <SearchResult  searchPlace={searchPlace}/>
             <Result />
+            <Featured />
         </div>
     );
 }
