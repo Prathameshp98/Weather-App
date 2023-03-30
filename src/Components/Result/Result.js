@@ -48,8 +48,25 @@ const Result = (props) => {
                 
             });  
 
-            const errorHandler = () => {
-                alert("Something went wrong")
+            const errorHandler = async() => {
+                const result = await weatherAPI.getDataByPlace(process.env.REACT_APP_API_KEY, 'Panvel')
+                if(result.cod === 200){
+                    const air = await CommonFunc.airQualityFinder(result.visibility)
+                    const time = await CommonFunc.timeFinder()
+                    setCurrentTime(time)
+                    setLocationData({
+                        data: result,
+                        icon: "https://openweathermap.org/img/wn/" + result.weather[0].icon + "@2x.png",
+                        quality: air
+                    })
+                } else {
+                    console.log("Something went wrong")
+                    setToastData({
+                        code: result.data.cod,
+                        message: result.data.message,
+                        timeStamp: Math.random()
+                    })
+                }
             }
             
             navigator.geolocation.getCurrentPosition(getLocation, errorHandler, {maximumAge:60000, timeout:5000, enableHighAccuracy:true})
