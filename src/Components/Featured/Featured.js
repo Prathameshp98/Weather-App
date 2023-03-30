@@ -51,9 +51,6 @@ const Featured = () => {
 
     }, [])
 
-    console.log("national: ", nationalLocationData)
-    console.log("international: ", internationalLocationData)
-
     return (
         <div className={`${styles.featured}`}> 
             <h2>Featured</h2>

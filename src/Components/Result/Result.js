@@ -26,7 +26,7 @@ const Result = (props) => {
 
         (async () => {
 
-            navigator.geolocation.getCurrentPosition(async function(position) {
+            const getLocation = (async function(position)  {
                 const result = await weatherAPI.getDataByCoordinates(process.env.REACT_APP_API_KEY, position.coords.latitude, position.coords.longitude)
                 if(result.cod === 200){
                     const air = await CommonFunc.airQualityFinder(result.visibility)
@@ -46,7 +46,13 @@ const Result = (props) => {
                     })
                 }
                 
-            });    
+            });  
+
+            const errorHandler = () => {
+                console.log("Something went wrong")
+            }
+            
+            navigator.geolocation.getCurrentPosition(getLocation, errorHandler, {maximumAge:60000, timeout:5000, enableHighAccuracy:true})
             
         })();
 
